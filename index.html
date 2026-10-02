@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magdesian Shoes | Premium Comfort Men's Dress Shoes</title>
+    <style>
+        /* Modern Reset & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        :root {
+            --primary: #1c1c1c;
+            --accent: #8b5a2b;
+            --accent-hover: #6e451f;
+            --light-bg: #f8f6f2;
+            --card-bg: #ffffff;
+            --text-muted: #666666;
+            --border-color: #e2ded7;
+        }
+
+        body {
+            color: var(--primary);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        /* Top Bar */
+        .announcement-bar {
+            background-color: var(--primary);
+            color: #ffffff;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header Navigation */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--accent);
+            font-weight: 300;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                        url('https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            padding: 0 1.5rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 0.9rem 2.2rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            border-radius: 2px;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Comfort Features Banner */
+        .features-banner {
+            background-color: #ffffff;
+            padding: 3rem 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Products Catalog */
+        .catalog {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            background-color: #f2f2f2;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .product-price {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        /* Heritage / Craftsmanship Section */
+        .craftsmanship {
+            background-color: #ffffff;
+            padding: 5rem 2rem;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .craftsmanship-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .craftsmanship-img {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .craftsmanship-img img {
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        .craftsmanship-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .craftsmanship-text h3 {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
+        }
+
+        .craftsmanship-text p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #cccccc;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a {
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333333;
+            font-size: 0.8rem;
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        Complimentary Shipping & Free Returns on All Domestic Orders
+    </div>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Magdesian <span>Shoes</span></div>
+            <ul class="nav-links">
+                <li><a href="#oxfords">Oxfords</a></li>
+                <li><a href="#loafers">Loafers</a></li>
+                <li><a href="#boots">Dress Boots</a></li>
+                <li><a href="#craftsmanship">Comfort Tech</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Timeless Style. Uncompromising Comfort.</h1>
+            <p>Handcrafted men's dress shoes featuring high-grade leather, OrthoLite® cushioning, and flexible soles built for all-day wear.</p>
+            <a href="#collection" class="btn">Explore The Collection</a>
+        </div>
+    </section>
+
+    <!-- Comfort Technology Features -->
+    <section class="features-banner">
+        <div class="features-grid">
+            <div class="feature-item">
+                <h4>Full-Grain Leather</h4>
+                <p>Hand-selected calfskin leathers that age gracefully and fit like a glove.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Memory Foam Footbeds</h4>
+                <p>Multi-density OrthoLite® insoles providing high-rebound cushioning.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Flexible Construction</h4>
+                <p>Engineered flexibility designed to reduce foot fatigue from morning to night.</p>
+            </div>
+            <div class="feature-item">
+                <h4>Breathable Linings</h4>
+                <p>Moisture-wicking leather linings for optimal climate control inside the shoe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <main id="collection" class="catalog">
+        <div class="section-header">
+            <h2>The Signature Collection</h2>
+            <p>Classic silhouettes reimagined with modern ergonomic technology</p>
+        </div>
+
+        <div class="product-grid">
+
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80" alt="Magdesian Classic Cap Toe Oxford">
+                <div class="product-info">
+                    <h3 class="product-title">The Executive Cap-Toe Oxford</h3>
+                    <p class="product-desc">Cognac Calfskin • Dual-Density Insole</p>
+                    <div class="product-price">$165.00</div>
+                    <button class="btn">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&q=80" alt="Magdesian Penny Loafer">
+                <div class="product-info">
+                    <h3 class="product-title">The Windsor Penny Loafer</h3>
+                    <p class="product-desc">Burgundy Leather • Slip-On Comfort</p>
+                    <div class="product-price">$155.00</div>
+                    <button class="btn">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80" alt="Magdesian Wingtip Brogue">
+                <div class="product-info">
+                    <h3 class="product-title">The Heritage Wingtip Brogue</h3>
+                    <p class="product-desc">Hand-Burnished Tan • Flex Rubber Sole</p>
+                    <div class="product-price">$170.00</div>
+                    <button class="btn">Add To Cart</button>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=800&q=80" alt="Magdesian Black Dress Oxford">
+                <div class="product-info">
+                    <h3 class="product-title">The Formal Plain-Toe Oxford</h3>
+                    <p class="product-desc">Polished Black Calfskin • Padded Collar</p>
+                    <div class="product-price">$160.00</div>
+                    <button class="btn">Add To Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Craftsmanship Section -->
+    <section id="craftsmanship" class="craftsmanship">
+        <div class="craftsmanship-container">
+            <div class="craftsmanship-img">
+                <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=800&q=80" alt="Magdesian Leather Craftsmanship">
+            </div>
+            <div class="craftsmanship-text">
+                <h3>Designed for the Man on the Move</h3>
+                <p>At <strong>Magdesian Shoes</strong>, we believe dress footwear should never require a trade-off between refined elegance and physical comfort. Inspired by classic American tailoring, each pair is crafted with meticulous attention to arch support, heel stability, and flexible outsole construction.</p>
+                <p>Whether heading into the boardroom or standing through an evening gala, Magdesian shoes ensure you walk with confidence and ease.</p>
+                <a href="#collection" class="btn">Shop Comfort Dress Shoes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Magdesian Shoes</h4>
+                <p style="font-size:0.85rem; line-height: 1.5;">Crafting premium men's dress footwear with innovative comfort technology and classic European-inspired design.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Shop Styles</h4>
+                <ul>
+                    <li><a href="#">Cap-Toe Oxfords</a></li>
+                    <li><a href="#">Wingtips & Brogues</a></li>
+                    <li><a href="#">Penny Loafers</a></li>
+                    <li><a href="#">Monk Straps</a></li>
+                    <li><a href="#">Comfort Dress Boots</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="#">Size & Fit Guide</a></li>
+                    <li><a href="#">Free Shipping & Returns</a></li>
+                    <li><a href="#">Shoe Care & Maintenance</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Join Our List</h4>
+                <p style="font-size:0.85rem; margin-bottom: 0.8rem;">Subscribe to receive exclusive access to new releases and care tips.</p>
+                <a href="#" class="btn" style="padding: 0.5rem 1rem; font-size: 0.75rem;">Subscribe</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2026 Magdesian Shoes. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
